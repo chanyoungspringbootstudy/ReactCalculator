@@ -14,8 +14,8 @@ class Counter extends Component {
         let {input1,input2} = this.state;
         return (
             <div className='counter-style'>
-                <Input value={input1} handleChange={(e) => this.handleChange111(e, "input1")}/>
-                <Input value={input2} handleChange={(e) => this.handleChange111(e, "input2")}/>
+                <Input value={input1} handleChange={(e) => this.handleChange(e, "input1")}/>
+                <Input value={input2} handleChange={(e) => this.handleChange(e, "input2")}/>
                 <button onClick={this.handlePlus}>+</button>
                 <button onClick={this.handleMinus}>-</button>
                 <button onClick={this.handleMulti}>x</button>
@@ -25,15 +25,11 @@ class Counter extends Component {
         );
     }
 
-    handleChange111(event, type) {
+    handleChange(event, type) {
         this.setState({
             [type]: parseInt(event.target.value)
         })
     }
-
-    // handleChange = event => this.setState({
-    //     delta: parseInt(event.target.value)
-    // });
     handlePlus = () => this.setState({
         result: this.state.input1 + this.state.input2
     });
